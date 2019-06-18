@@ -1,6 +1,8 @@
 # 实现
 
 # 常量表
+## OBJECT
+  - Me id=1
 ## ACTION
   - ACTION_ATTACK = 0 #攻击
   - ACTION_MING = 1 # 开采
@@ -20,8 +22,7 @@ world拥有一个记录所有存活事件的对象表。
  - Object移动
  
  - 世界生成
- 
- - 
+
  
 # Class:BaseObject
 

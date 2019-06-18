@@ -1,6 +1,6 @@
 # coding:utf-8s
 import random,uuid
-
+import object
 
 class TheWorld(object):
     # todo:完善新对象的生存周期的相关操作，例如对象生成/移动/销毁等
@@ -10,9 +10,11 @@ class TheWorld(object):
         self.round = 0
         self.flag_finish = False
         self.alive_user = 0
+        self.i = 0
         self.objects = {}
         self.world_size = size
         self.__create_world(size[0], size[1], size[2])
+        self.table = object.T()
 
     def __check_alive_user(self):
         # 判断存活玩家
@@ -28,6 +30,13 @@ class TheWorld(object):
     def __create_world(self, x, y, z):
         # 地图创建
         self.world = [[[0] * x for i in range(y)] * x for i in range(z)]  # 构建3D世界
+
+    def __create_object(self, id, direction_x_y_z):
+        obj = self.table.get(id)
+        if obj:
+            self.i = self.i + 1
+            obj_ = obj(self.i, direction_x_y_z)
+            self.objects[self.i] = obj_
 
     def __user_generate(self):
         x = random.randint(0, self.world_size[0])
