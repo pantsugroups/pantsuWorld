@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b97e38a-ad4c-4f2b-804c-df7697b92c13" name="默认更改列表" comment="龟速填坑&#10;+ 添加了一些object&#10;+ 完善了一些">
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+    <list default="true" id="3b97e38a-ad4c-4f2b-804c-df7697b92c13" name="默认更改列表" comment="增加头脑风暴">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/draft.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/achieve.md" beforeDir="false" afterPath="$PROJECT_DIR$/achive.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/object.py" beforeDir="false" afterPath="$PROJECT_DIR$/object.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world.py" beforeDir="false" afterPath="$PROJECT_DIR$/world.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,12 +12,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/draft.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="367">
-                <caret line="108" column="18" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="18" />
+              <first_editor relative-caret-position="-891">
+                <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
               </first_editor>
               <second_editor />
             </state>
@@ -33,8 +28,8 @@
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="240">
-                <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+              <first_editor relative-caret-position="128">
+                <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               </first_editor>
               <second_editor />
             </state>
@@ -53,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/object.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="27" column="20" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="20" />
+            <state relative-caret-position="288">
+              <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -66,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/achive.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="240">
+              <first_editor relative-caret-position="144">
                 <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               </first_editor>
               <second_editor />
@@ -97,10 +92,10 @@
       <list>
         <option value="$PROJECT_DIR$/achieve.md" />
         <option value="$PROJECT_DIR$/achive.md" />
-        <option value="$PROJECT_DIR$/draft.md" />
         <option value="$PROJECT_DIR$/world.py" />
-        <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/object.py" />
+        <option value="$PROJECT_DIR$/readme.md" />
+        <option value="$PROJECT_DIR$/draft.md" />
       </list>
     </option>
   </component>
@@ -164,12 +159,27 @@
       <updated>1560678450269</updated>
       <workItem from="1560678455327" duration="4057000" />
       <workItem from="1560787388519" duration="3416000" />
-      <workItem from="1560868849278" duration="5536000" />
+      <workItem from="1560868849278" duration="7400000" />
     </task>
+    <task id="LOCAL-00001" summary="设计基本完成啦，准备写神经网络了！">
+      <created>1560879239725</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560879239725</updated>
+    </task>
+    <task id="LOCAL-00002" summary="增加头脑风暴">
+      <created>1560880635098</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560880635098</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13009000" />
+    <option name="totallyTimeSpent" value="14873000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -184,7 +194,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.124242425" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.124242425" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -193,7 +203,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32894737" />
@@ -233,40 +243,15 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="设计基本完成啦，准备写神经网络了！" />
+    <MESSAGE value="增加头脑风暴" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加头脑风暴" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/game.md" />
     <entry file="file://$PROJECT_DIR$/event.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/draft.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="367">
-            <caret line="108" column="18" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="18" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="240">
-            <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/achive.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="240">
-            <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/world.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -280,8 +265,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/object.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="20" />
+        <state relative-caret-position="288">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/achive.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="144">
+            <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/readme.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="128">
+            <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/draft.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-891">
+            <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

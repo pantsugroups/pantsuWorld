@@ -166,6 +166,184 @@ hhhhh
 
 【群主】⑨BIE 2019/6/19 1:53:14
 那么可是指数类增长的
+
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:04:37
+我们从头来捋一捋
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:04:48
+开局是什么
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:04:58
+如何产生下一代
+【群主】⑨BIE(1948158539) 2:04:59
+2虫
+【群主】⑨BIE(1948158539) 2:05:05
+开矿
+【群主】⑨BIE(1948158539) 2:05:08
+交配
+【群主】⑨BIE(1948158539) 2:05:21
+交配有限制
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:05:24
+产生所需要的资源是什么
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:05:38
+下一代的属性怎么来
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:05:56
+种群的数量限制方案
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:06:08
+无限制
+【群主】⑨BIE(1948158539) 2:06:13
+无限制
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:06:38
+你们记得高中生物吗
+【群主】⑨BIE(1948158539) 2:06:39
+@Gerardyang 属性继承和变异出来
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:06:43
+资源叫什么都好 分布就像红警那样？
+【群主】⑨BIE(1948158539) 2:06:50
+咋们是游戏呀
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:06:58
+不不不
+【群主】⑨BIE(1948158539) 2:07:05
+最后肯定有一方要灭亡的(
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:07:11
+考虑到运算资源限制的话
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:07:20
+种群数量也要有一个限制
+【群主】⑨BIE(1948158539) 2:07:34
+资源没了
+【群主】⑨BIE(1948158539) 2:07:46
+数量也就上不去咯
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:07:56
+那么资源要有多少
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:08:04
+才是合理的
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:08:04
+图挤满为止 单位不能重叠
+【群主】⑨BIE(1948158539) 2:08:05
+再加个老化机制？
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:08:20
+老化机制难
+【吐槽】能 天 使<xblaze@qq.com> 2:08:24
+老化机制可以
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:08:24
+老化是不可能的
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:08:26
+时间单位是什么
+【吐槽】能 天 使<xblaze@qq.com> 2:08:27
+但是寿命
+【吐槽】能 天 使<xblaze@qq.com> 2:08:31
+也得是随机的
+【吐槽】能 天 使<xblaze@qq.com> 2:08:37
+而且每个种族的寿命也不一样
+【群主】⑨BIE(1948158539) 2:08:41
+寿命也是变异来的
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:08:45
+每个单位考虑的状态不能太多
+【吐槽】能 天 使<xblaze@qq.com> 2:08:47
+进化过程中寿命会变
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:08:51
+老化这个，会增加很多运算
+【吐槽】能 天 使<xblaze@qq.com> 2:08:55
+server crashed
+【吐槽】能 天 使<xblaze@qq.com> 2:08:57
+game over
+【群主】⑨BIE(1948158539) 2:09:00
+对
+【群主】⑨BIE(1948158539) 2:09:09
+运算会很多是真的
+【群主】⑨BIE(1948158539) 2:09:16
+ 
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:09:21
+所以不加老化
+【群主】⑨BIE(1948158539) 2:09:25
+这个不能随便加
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:09:30
+改成自然灾害
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:09:30
+和动员兵差不多复杂就行
+【群主】⑨BIE(1948158539) 2:09:30
+先不加老化吧
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:09:36
+随机的自然灾害
+【群主】⑨BIE(1948158539) 2:09:45
+不然几百万对象都算老化
+【群主】⑨BIE(1948158539) 2:09:50
+当场gg
+【群主】⑨BIE(1948158539) 2:10:06
+@Gerardyang 这个肯定有。但是无法限制人口
+如果繁殖不受距离限制 新单位出现在哪里
+【吐槽】能 天 使<xblaze@qq.com> 2:16:53
+那么问题来了
+【吐槽】能 天 使<xblaze@qq.com> 2:16:59
+繁殖方式要不要分类
+【吐槽】能 天 使<xblaze@qq.com> 2:17:14
+一开始有有丝分裂无丝分裂出芽生殖
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:17:19
+不可能
+【群主】⑨BIE(1948158539) 2:17:25
+不行
+【吐槽】能 天 使<xblaze@qq.com> 2:17:38
+显然是不行的
+【吐槽】能 天 使<xblaze@qq.com> 2:17:45
+insufficient funds
+【群主】⑨BIE(1948158539) 2:17:47
+那样缺少活力
+【群主】⑨BIE(1948158539) 2:17:55
+沙盘容易死气沉沉
+【吐槽】Einstein义务宣传员<wilsonzhang1153@qq.com> 2:18:17
+我见到能天使了
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:18:31
+繁殖的API怎么抽象
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:18:51
+DIG(开采速度) [1,10)
+ATK(力量) [10,100]
+GAR(防御) (0,50]
+SPD(速度) [1,10]
+CAR(运载力) [1,5]
+SEX(性别) {0 | 1}
+以上皆取整数
+开采能力由 力量*0.1*开采速度 决定，向下取整，开采能力不足的不能开采矿物
+【群主】⑨BIE(1948158539) 2:19:10
+繁殖api还不好说，父母，资源
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:19:20
+不可能筛选雌雄DNA来进行具体的杂交吧
+【群主】⑨BIE(1948158539) 2:19:34
+然后控制具体啥时候停止
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:19:38
+那最后不还是随机杂交
+【群主】⑨BIE(1948158539) 2:19:43
+然后丢算法里
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:19:45
+啊，还有个作为标识的id
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:19:50
+和概率有啥区别...
+【群主】⑨BIE(1948158539) 2:19:57
+@Ghosin 父母是可选的
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:20:07
+玩家可以控制父母方
+【群主】⑨BIE(1948158539) 2:20:09
+可以自己搭配
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:20:10
+用id
+【吐槽】Ghosin ghos.in<admin@ghosin.com> 2:20:31
+当有上万个雌雄个体 具体怎么控制
+【群主】⑨BIE(1948158539) 2:20:42
+这个交给程序
+【话唠】Gerardyang<sakurayayang@foxmail.com> 2:20:45
+id是16位哈希值还是从1开始递增
+【群主】⑨BIE(1948158539) 2:20:53
+看你程序怎么写的
+【群主】⑨BIE(1948158539) 2:20:58
+@Gerardyang 1
+【吐槽】Last End<bit233333@vip.qq.com> 2:21:10
+@Ghosin 我写个粗暴的，父代两人属性按属性分别加在一块，随机
+【群主】⑨BIE(1948158539) 2:21:11
+我们的玩家都是脚本
+【吐槽】Last End<bit233333@vip.qq.com> 2:21:12
+完事
+【吐槽】Last End<bit233333@vip.qq.com> 2:21:16
+ 
+【群主】⑨BIE(1948158539) 2:21:32
+怎么杂交这是用户的事，了
+
 ```
 ## 灵感
 #### 100x100x100的立体空间
