@@ -65,7 +65,7 @@ class Me(object):
             "attribute": self.__calc_extra_attributes()
         }
 
-    def stimulate(self, event):
+    def stimulate(self, occurrence_direction, event):
         # 外部接收到刺激
         pass
 

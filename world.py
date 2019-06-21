@@ -31,7 +31,8 @@ class TheWorld(object):
 
     def __create_world(self, x, y, z):
         # 地图创建
-        self.world = [[[0] * x for i in range(y)] * x for i in range(z)]  # 构建3D世界
+        self.world = [[[0] * x for i in range(y)] * 1 for i in range(z)]  # 构建3D世界
+        # todo: 生成随机星球资源
 
     def __id_generate(self):
         return self.i + 1
@@ -45,12 +46,22 @@ class TheWorld(object):
 
     def __event_distributor(self, occurrence_direction, event):
         # 事件下发器
+        x,y,z = 0, 0, 0
         maps = self.api_sight(10, occurrence_direction)
-        # todo:枚举数组中的Me对象坐标
-        # for i in range(maps):
-        #     for j in range(maps[i]):
-        #         for k in range(maps[i][j]):
-        #             pass
+        for i in maps:
+            x += 1
+            y = 0
+            for j in i:
+                y += 1
+                z = 0
+                for k in j:
+                    z += 1
+                    if k != 0:
+                        # x_ = x-1
+                        # y_ = y-1
+                        # z_ = z-1
+                        # 因为是从1开始计算，-1后才是真实数组下标
+                        k.stimulate(occurrence_direction, event)  # 事件发送给对象
 
     def __random_coordinate_generate(self):
         x = random.randint(0, self.world_size[0])
