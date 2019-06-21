@@ -83,6 +83,9 @@ class TheWorld(object):
         self.__create_object(self.__id_generate(), dre)
         return user_hash
 
+    def callback(self):
+        pass
+
     def api_sight(self, field, object_direction_x_y_z):
         # 获取单位周围的地图信息
         # field可以为object的fld
