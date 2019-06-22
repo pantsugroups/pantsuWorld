@@ -22,10 +22,12 @@ class T(object):
 
 class Me(object):
     # todo:加入神经网络，模拟变异
-    def __init__(self, world, id, atk, gar, spd, car, sex, fld):
+    def __init__(self, world, id, atk, gar, spd, car, sex, fld, is_base=False):
+        self.is_base = is_base
         self.world = world  # 处于哪个世界
         self.type_id = 1
         self.id = id
+        self.event = None
         self.ATK = atk  # 攻击力
         self.bag = {}
         self.GAR = gar  # 防御力
@@ -69,8 +71,19 @@ class Me(object):
         # 外部接收到刺激
         pass
 
-    def action(self):
-        pass
+    def action(self, event=None):
+        # 记录事件
+        if event is None:
+            return self.event
+        else:
+            if self.event is not None:
+                old_event = self.event
+                self.event = event
+                return old_event
+            else:
+                self.event = event
+                return None
+
 
 
 class Planet(object):

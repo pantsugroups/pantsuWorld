@@ -1,5 +1,8 @@
 # coding:utf-8s
-import random, uuid, threading
+import random
+import threading
+import uuid
+
 import object
 
 
@@ -11,7 +14,7 @@ class TheWorld(object):
         self.round = 0
         self.event = event_object
         self.flag_finish = True
-        self.alive_user = []
+        self.users = {}
         self.i = 0
         self.objects = {}
         self.world_size = size
@@ -20,10 +23,12 @@ class TheWorld(object):
 
     def __check_alive_user(self):
         # 判断存活玩家
-        if self.alive_user == 1:
+        alive = 0
+        for i in self.users:
+            if i["alive"] is True:
+                alive += 1
+        if alive == 1:
             self.flag_finish = True
-            # 游戏结束
-            return
 
     def __tick_iteration(self):
         # 游戏回合迭代
@@ -37,11 +42,10 @@ class TheWorld(object):
     def __id_generate(self):
         return self.i + 1
 
-    def __create_object(self, id, direction_x_y_z):
-        obj = self.table.get(id)
+    def __create_object(self, type_id, direction_x_y_z):
+        obj = self.table.get(type_id)
         if obj:
-            self.i = self.i + 1
-            obj_ = obj(self.i, direction_x_y_z)
+            obj_ = obj(self.__id_generate(), direction_x_y_z)
             self.objects[self.i] = obj_
 
     def __event_distributor(self, occurrence_direction, event):
@@ -81,6 +85,12 @@ class TheWorld(object):
         dre = self.__random_coordinate_generate()
         user_hash = uuid.uuid4()
         self.__create_object(self.__id_generate(), dre)
+        self.users[user_hash] = {
+            "objects": 0,  # 还或者多少单位
+            "alive": True,
+            "base": dre,  # 基地车位置
+            "magic_CD": 0  # 某些查询的功能的冷却事件，是按照回合计算的
+        }  # 创建用户信息
         return user_hash
 
     def callback(self):
@@ -96,7 +106,7 @@ class TheWorld(object):
         return self.world[x - field / 2:x + field / 2][y - field / 2:y + field / 2][z - field / 2:z + field / 2]
 
     def api_move(self, user_hash, obj_id, direction_x_y_z):
-        # 控制某个目标移动
+        # 控制某个目标移动。参数三输入个tuple：(x,y,z) ，xyz是以对象当前坐标为基准
         pass
 
     def api_action(self, user_hash, obj_id, direction_x_y_z, action_type):
