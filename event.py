@@ -15,9 +15,9 @@ class Event(object):
 
     def callback(self):
         if self.action == EVENT_ACTION_MOVE:
-            # todo:距离修改，按照回合修改坐标达到移动效果
+            # todo:距离修改，按照回合修改坐标达到移动效果,以及销毁事件
             # 这里先暂时只搞成瞬移
-            t_dir = self.father.inline_maps_move(self.id, self.direction_x_y_z)
+            t_dir = self.father.get_world().inline_maps_move(self.id, self.direction_x_y_z)
             self.father.set_coordinate(t_dir)
 
 

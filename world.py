@@ -6,7 +6,7 @@ import event
 import object
 
 
-class TheWorld(object):
+class TheWorld:
     # todo:完善新对象的生存周期的相关操作，例如对象生成/移动/销毁等
     def __init__(self, handle, size=(100, 100, 100)):
         super(TheWorld, self).__init__()
@@ -21,7 +21,7 @@ class TheWorld(object):
         self.objects = {}
         self.world_size = size
         self.__create_world(size[0], size[1], size[2])
-        self.table = object.T()
+        self.detector = object.Detector()
 
     def __check_alive_user(self):
         # 判断存活玩家
@@ -35,9 +35,22 @@ class TheWorld(object):
 
     def __tick_iteration(self):
         # 游戏回合迭代
-        if self.event_map[self.tick]:
-            self.event_map.pop(self.tick)  # GC，虽然我觉得python内部的计数器会帮我GC但是我还是忍不住自己GC一下
+        print(self.event_map)
+        print(self.world, self.tick)
+        # if self.event_map[self.tick]:
+        #     self.event_map.pop(self.tick)  # GC，虽然我觉得python内部的计数器会帮我GC但是我还是忍不住自己GC一下
         self.tick += 1
+        for i in self.event_map:
+            self.event_map[i].callback()
+
+        # debug segment
+
+        if self.tick == 2:
+            self.flag_finish = True
+            return
+        # debug end
+        # todo:解决最大下潜深度的问题
+        self.__tick_iteration()
 
     def __create_world(self, x, y, z):
         # 地图创建
@@ -50,11 +63,17 @@ class TheWorld(object):
     def __event_id_generate(self):
         return self.event_i + 1
 
-    def __create_object(self, type_id, direction_x_y_z):
-        obj = self.table.get(type_id)
+    def __create_object(self, type_id, user_hash, direction_x_y_z):
+        x, y, z = direction_x_y_z
+        self.users[user_hash]["objects"] += 1
+        obj = self.detector.get(type_id)
         if obj:
-            obj_ = obj(self.__id_generate(), direction_x_y_z)
-            self.objects[self.i] = obj_
+            # todo:替换成detector来创建
+            i = self.__id_generate()
+            obj_ = obj(self, user_hash, i, direction_x_y_z)
+            self.objects[i] = obj_
+            self.world[x][y][z] = i
+            return i
 
     def __event_distributor(self, occurrence_direction, event):
         # 事件下发器
@@ -76,30 +95,32 @@ class TheWorld(object):
                         k.stimulate(occurrence_direction, event)  # 事件发送给对象
 
     def __random_coordinate_generate(self):
-        x = random.randint(0, self.world_size[0])
-        y = random.randint(0, self.world_size[1])
-        z = random.randint(0, self.world_size[2])
+        x = random.randint(0, self.world_size[0] - 1)
+        y = random.randint(0, self.world_size[1] - 1)
+        z = random.randint(0, self.world_size[2] - 1)
         return x, y, z
 
     def control_start_game(self):
-        if self.flag_finish and not self.users:
+        if self.flag_finish:
             self.flag_finish = False
-            threading.Thread(self.__tick_iteration()).start()
+            # threading.Thread(self.__tick_iteration()).start()
+            self.__tick_iteration()
             return True
         else:
             return False
 
     def control_add_user(self):
         dre = self.__random_coordinate_generate()
-        user_hash = uuid.uuid4()
-        self.__create_object(self.__id_generate(), dre)
+        user_hash = str(uuid.uuid4())
+
         self.users[user_hash] = {
             "objects": 0,  # 还或者多少单位
             "alive": True,
             "base": dre,  # 基地车位置
             "magic_CD": 0  # 某些查询的功能的冷却事件，是按照回合计算的
         }  # 创建用户信息
-        return user_hash
+        o_id = self.__create_object(1, user_hash, dre)
+        return user_hash, o_id
 
     def callback(self):
         pass
@@ -122,7 +143,7 @@ class TheWorld(object):
         y = direction_x_y_z[1]
         z = direction_x_y_z[2]
         if self.world[x][y][z] == 0:
-            rx, ry, rz = obj_id.get_coordinate()
+            rx, ry, rz = self.objects[obj_id].get_coordinate()
             self.world[rx][ry][rz] = 0
             self.world[x][y][z] = obj_id
             return x, y, z
@@ -132,11 +153,12 @@ class TheWorld(object):
 
     def api_action(self, user_hash, obj_id, direction_x_y_z, action_type):
         # 参数二不代表对象位置，而是对象事件的参数
-        # todo:完善事件ID和事件对应的参数表
-        if self.objects[obj_id].attributes["belong"] == user_hash:
-            # todo:action处理,
+        # todo:完善事件ID和事件对应的参数表,第三个参数direction修改为已当前位置为0坐标而不是直接坐标
+        if self.objects[obj_id].attributes()["belong"] == user_hash:
+            # todo:action处理,和object绑定
             if action_type == event.EVENT_ACTION_MOVE:
-                n = event.Event(self.__tick_iteration(), self.objects[obj_id], self.tick, action_type, direction_x_y_z)
+                n = event.Event(self.__event_id_generate(), self.objects[obj_id], self.tick, action_type,
+                                direction_x_y_z)
                 if self.objects[obj_id].get_event() is not None and self.objects[obj_id].get_event() in self.event_map:
                     del (self.event_map[self.objects[obj_id].get_event()])
                 self.event_map[self.__event_id_generate()] = n

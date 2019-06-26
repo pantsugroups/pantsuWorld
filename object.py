@@ -10,9 +10,9 @@ class BaseObject(object):
     pass
 
 
-class T(object):
+class Detector(object):
     def __init__(self):
-        self.maps = {}
+        self.maps = {1:Me}
 
     def get(self, id):
         if id in self.maps:
@@ -23,7 +23,7 @@ class T(object):
 
 class Me(object):
     # todo:加入神经网络，模拟变异
-    def __init__(self, world, belong, id, coordinate, atk, gar, spd, car, sex, fld, is_base=False):
+    def __init__(self, world, belong, id, coordinate, atk=0, gar=0, spd=0, car=0, sex=0, fld=0, is_base=False):
         self.is_base = is_base
         self.coordinate = coordinate
         self.user_hash = belong
@@ -38,6 +38,9 @@ class Me(object):
         self.CAR = car  # 运载力
         self.SEX = sex  # 性别
         self.FLD = fld  # 视野
+
+    def get_world(self):
+        return self.world
 
     def set_coordinate(self,coordinate):
         self.coordinate = coordinate
