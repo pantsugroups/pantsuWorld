@@ -1,3 +1,4 @@
+#coding:utf-8
 # todo:完善基本对象接口需求
 
 
@@ -22,8 +23,10 @@ class T(object):
 
 class Me(object):
     # todo:加入神经网络，模拟变异
-    def __init__(self, world, id, atk, gar, spd, car, sex, fld, is_base=False):
+    def __init__(self, world, belong, id, coordinate, atk, gar, spd, car, sex, fld, is_base=False):
         self.is_base = is_base
+        self.coordinate = coordinate
+        self.user_hash = belong
         self.world = world  # 处于哪个世界
         self.type_id = 1
         self.id = id
@@ -36,8 +39,17 @@ class Me(object):
         self.SEX = sex  # 性别
         self.FLD = fld  # 视野
 
+    def set_coordinate(self,coordinate):
+        self.coordinate = coordinate
+
+    def get_coordinate(self):
+        return self.coordinate
+
     def get_type(self):
         return self.type_id
+
+    def get_event(self):
+        return self.event
 
     def __calc_extra_attributes(self):
         # 计算背包中装备对数值的加成
@@ -64,6 +76,7 @@ class Me(object):
         return {
             "id": self.id,
             "type": self.type_id,
+            "belong": self.user_hash,
             "attribute": self.__calc_extra_attributes()
         }
 
@@ -83,7 +96,6 @@ class Me(object):
             else:
                 self.event = event
                 return None
-
 
 
 class Planet(object):

@@ -1,21 +1,23 @@
-# coding:utf-8s
+# coding:utf-8
 import random
 import threading
 import uuid
-
+import event
 import object
 
 
 class TheWorld(object):
     # todo:完善新对象的生存周期的相关操作，例如对象生成/移动/销毁等
-    def __init__(self, event_object, size=(100, 100, 100)):
+    def __init__(self, handle, size=(100, 100, 100)):
         super(TheWorld, self).__init__()
         # self.time = None 想了想似乎不需要？
-        self.round = 0
-        self.event = event_object
+        self.tick = 0  # 类似于回合
+        self.handle = handle
         self.flag_finish = True
         self.users = {}
-        self.i = 0
+        self.i = 0  # 对象id
+        self.event_i = 0  # 事件id
+        self.event_map = {}
         self.objects = {}
         self.world_size = size
         self.__create_world(size[0], size[1], size[2])
@@ -29,10 +31,13 @@ class TheWorld(object):
                 alive += 1
         if alive == 1:
             self.flag_finish = True
+        return alive
 
     def __tick_iteration(self):
         # 游戏回合迭代
-        pass
+        if self.event_map[self.tick]:
+            self.event_map.pop(self.tick)  # GC，虽然我觉得python内部的计数器会帮我GC但是我还是忍不住自己GC一下
+        self.tick += 1
 
     def __create_world(self, x, y, z):
         # 地图创建
@@ -42,6 +47,9 @@ class TheWorld(object):
     def __id_generate(self):
         return self.i + 1
 
+    def __event_id_generate(self):
+        return self.event_i + 1
+
     def __create_object(self, type_id, direction_x_y_z):
         obj = self.table.get(type_id)
         if obj:
@@ -50,7 +58,7 @@ class TheWorld(object):
 
     def __event_distributor(self, occurrence_direction, event):
         # 事件下发器
-        x,y,z = 0, 0, 0
+        x, y, z = 0, 0, 0
         maps = self.api_sight(10, occurrence_direction)
         for i in maps:
             x += 1
@@ -74,7 +82,7 @@ class TheWorld(object):
         return x, y, z
 
     def control_start_game(self):
-        if self.flag_finish and not self.alive_user:
+        if self.flag_finish and not self.users:
             self.flag_finish = False
             threading.Thread(self.__tick_iteration()).start()
             return True
@@ -105,10 +113,32 @@ class TheWorld(object):
         # todo:解决field越界问题
         return self.world[x - field / 2:x + field / 2][y - field / 2:y + field / 2][z - field / 2:z + field / 2]
 
-    def api_move(self, user_hash, obj_id, direction_x_y_z):
-        # 控制某个目标移动。参数三输入个tuple：(x,y,z) ，xyz是以对象当前坐标为基准
-        pass
+    def api_get_tick(self):
+        return self.tick
+
+    def inline_maps_move(self, obj_id, direction_x_y_z):
+        # 内部函数，返回真实移动的位置
+        x = direction_x_y_z[0]
+        y = direction_x_y_z[1]
+        z = direction_x_y_z[2]
+        if self.world[x][y][z] == 0:
+            rx, ry, rz = obj_id.get_coordinate()
+            self.world[rx][ry][rz] = 0
+            self.world[x][y][z] = obj_id
+            return x, y, z
+        else:
+            # todo: 想个办法解决了如果移动目的地有东西在的问题
+            pass
 
     def api_action(self, user_hash, obj_id, direction_x_y_z, action_type):
+        # 参数二不代表对象位置，而是对象事件的参数
         # todo:完善事件ID和事件对应的参数表
-        pass
+        if self.objects[obj_id].attributes["belong"] == user_hash:
+            # todo:action处理,
+            if action_type == event.EVENT_ACTION_MOVE:
+                n = event.Event(self.__tick_iteration(), self.objects[obj_id], self.tick, action_type, direction_x_y_z)
+                if self.objects[obj_id].get_event() is not None and self.objects[obj_id].get_event() in self.event_map:
+                    del (self.event_map[self.objects[obj_id].get_event()])
+                self.event_map[self.__event_id_generate()] = n
+        else:
+            return
